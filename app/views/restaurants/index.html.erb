@@ -1,0 +1,27 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://unsplash.it/1028/350');">
+  <div class="banner-content">
+    <h1>Restaurants</h1>
+    <p>...and stuff</p>
+    <h4><%= link_to "Add a restaurant", new_restaurant_path, class: "btn btn-default" %></h4>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+      <ul class="list-unstyled">
+        <% @restaurants.each do |restaurant| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+          <li class="text-center">
+          <p><%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+          <p><%= restaurant.address %></p>
+          <p><%= restaurant.category %></p>
+          </li></div>
+        </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
